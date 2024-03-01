@@ -1,0 +1,12 @@
+name: temp
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [issues]
+
+jobs:
+  Explore-GitHub-Actions:
+      runs-on: ubuntu-latest
+      steps:
+      - name: print title
+        env:
+          TITLE: ${{ github.event.issue.title }}
+        run: echo "$TITLE"
