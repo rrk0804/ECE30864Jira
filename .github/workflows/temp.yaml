@@ -1,12 +1,14 @@
-name: temp
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [issues]
+name: Detect Context Sink Vulnerability
+
+on: 
+  issues: 
+    types: [opened, edited]
 
 jobs:
-  Explore-GitHub-Actions:
-      runs-on: ubuntu-latest
-      steps:
-      - name: print title
-        env:
-          TITLE: ${{ github.event.issue.title }}
-        run: echo "$TITLE"
+  log:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log the issue's title
+        run: |
+          echo "A new pull request was created with the 
+          title ${{ github.event.issue.title }}"
